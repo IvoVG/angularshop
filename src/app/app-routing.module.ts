@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddressComponent } from './address/address.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'address', component: EditAddressComponent},
+  {path: 'address', component: AddressComponent},
+  {path: 'edit-address', component: EditAddressComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'order', component: OrdersComponent},
   {path: 'product', component: ProductsingleComponent},
