@@ -35,6 +35,7 @@ export class AuthService {
         password,
         active,
       },
+      
       httpOptions
     );
   }
@@ -52,6 +53,10 @@ export class AuthService {
         },
         httpOptions
       );
+    }
+    
+    refreshToken() {
+      return this.http.post(AUTH_API + 'refreshtoken', { }, httpOptions);
     }
 
   logout(): Observable<any> {

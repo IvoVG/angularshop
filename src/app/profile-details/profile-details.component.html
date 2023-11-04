@@ -134,8 +134,8 @@
   
                   <button type="submit" class="btn btn-dark">Save Changes</button>
                   <p>{{ message }}</p>
-                  <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-                    Signup failed!<br />{{message }}
+                  <div class="alert alert-warning" *ngIf="f.submitted">
+                    Changes failed!<br />{{message }}
                   </div>
                               
               </div>

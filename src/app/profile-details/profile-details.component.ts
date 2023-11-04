@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user.model';
 import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
 import { UserService } from '../_services/user.service';
+
 
 @Component({
   selector: 'app-profile-details',
@@ -49,14 +49,21 @@ export class ProfileDetailsComponent implements OnInit {
    const _id= this.userForm.userId;
     this.authService.updateUser(firstName, lastName, phoneNumber, username, email, password, _id).subscribe({
       next: data => {
-        window.location.reload();
+        
         console.log(data);
         this.isSuccessful = true;
+        this.storageService.saveUser(data);
+        this.storageService.getUser();
+        this.reloadPage();
       },
       error: err => {
         this.message = err.error.message;
         this.isSignUpFailed = true;
       }
     });
+  }
+
+  reloadPage(): void {
+  window.location.reload();
   }
 }
